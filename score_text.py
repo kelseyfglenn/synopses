@@ -13,6 +13,7 @@ class score_text():
 
     def __call__(self, text, vectorizer, factorizer, predictor):
         self.text = text
+        self.text_length = len(self.text)
         self.vectorizer = vectorizer
         self.factorizer = factorizer
         self.predictor = predictor
@@ -20,6 +21,7 @@ class score_text():
         self.clean()
         self.vectorize()
         self.factorize()
+        self.add_length_column()
         return self.predict()
 
     def clean(self):
@@ -30,7 +32,10 @@ class score_text():
     
     def factorize(self):
         self.text = self.factorizer.transform(self.text)
-    
+
+    def add_length_column(self):
+        self.text.append(self.text_length)
+
     def predict(self):
         return self.predictor.predict(self.text)[0].round(2)
 
