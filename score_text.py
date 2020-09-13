@@ -36,7 +36,11 @@ class score_text():
         self.text = self.factorizer.transform(self.text)
 
     def add_length_column(self):
+<<<<<<< HEAD
         self.text = np.append(self.text, self.text_length).reshape(1,-1)
+=======
+        self.text.append(self.text_length)
+>>>>>>> 8073aca0ea6748cf4bd647de5448b0f15c0f1270
 
     def predict(self):
         return self.predictor.predict(self.text)[0].round(2)
