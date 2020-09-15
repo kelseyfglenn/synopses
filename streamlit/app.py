@@ -29,7 +29,6 @@ with open('transformers/final_vec.pkl', 'rb') as f:
 st.markdown('# AniMaker')
 st.markdown("**AI-generated Anime plot synopses.**")
 
-
 st.sidebar.markdown('## Generator')
 st.sidebar.markdown('To generate a new synopsis, just enter a few words to get it started and click **Generate**. May take a bit.', unsafe_allow_html=True)
 st.sidebar.markdown('## Scorer')
