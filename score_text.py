@@ -8,7 +8,12 @@ from clean_text import clean_text
 
 
 class score_text():
-
+    """
+    scoring object allowing for interchangeable, pre-fit transformers and regression models
+    vectorizer: TF-IDF, CountVectorizer or equivalent -- pre-fit to training data
+    factorizer: LSA method e.g. NMF, SVD -- pre-fit to training data
+    predictor: pre-fit regression model
+    """
     def __init__(self, cleaner=clean_text):
         self.cleaner = clean_text
 
@@ -42,6 +47,8 @@ class score_text():
         return self.predictor.predict(self.text)[0].round(2)
 
 def score(text, vectorizer, factorizer, predictor):
-    
+    """
+    initialize a score_text object and call it with the specified transformers and regression model
+    """
     scorer = score_text()
     return scorer(text, vectorizer, factorizer, predictor)
