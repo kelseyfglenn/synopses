@@ -16,7 +16,7 @@ Finally, code for a small deployment via Steamlit is included which allows users
 A brief warning: this project includes data containing potentially explicit material and may contain inappropriate or sensitive content.
 
 ## Project Directory</br>
-**Modules**</br>
+**Accessory Modules**</br>
 <ul>
 <li><b>clean_generations.py</b> - function for cleaning generator output file</li>
 <li><b>clean_text.py</b> - function for cleaning training data</li>
